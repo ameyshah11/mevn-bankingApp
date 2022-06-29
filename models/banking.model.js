@@ -18,7 +18,8 @@ module.exports = mongoose => {
         },
         email:{
             type:String,
-            required:true
+            required:true,
+            unique:true
         },
         password:{
             type:String,
@@ -41,7 +42,7 @@ module.exports = mongoose => {
         next()
     })
 
-    const BankingCustomerModel = mongoose.model("customer", BankingSchema)
+    const BankingCustomerModel = mongoose.model("customers", BankingSchema)
 
     return BankingCustomerModel
 }
